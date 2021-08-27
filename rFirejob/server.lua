@@ -103,7 +103,7 @@ ESX.RegisterServerCallback('rFire:infoReport', function(source, cb)
 end)
 
 RegisterServerEvent("rFire:fireAppel")
-AddEventHandler("rFire:emsAppel", function()
+AddEventHandler("rFire:fireAppel", function()
     local xPlayers    = ESX.GetPlayers()
     for i=1, #xPlayers, 1 do
         local xPlayer = ESX.GetPlayerFromId(xPlayers[i])
@@ -138,5 +138,5 @@ RegisterCommand(Fire.CommandName, function(source, args, rawCommand)
         gps = coords
     })
 	TriggerClientEvent('esx:showAdvancedNotification', source, 'Sapeur-Pompier', '~r~Informations', 'Ta demande a été envoyé à tous les pompiers en ville', 'CHAR_CALL911', 2)
-	TriggerEvent('rFire:emsAppel')
+	TriggerEvent('rFire:fireAppel')
 end, false)
